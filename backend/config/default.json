@@ -1,0 +1,7 @@
+{
+  "HOST": "localhost",
+  "PORT": 4000,
+  "VERSION": 1,
+  "NAME": "Pipe-planner-api",
+  "MONGODB_URI": "mongodb://localhost/pipe-planner"
+}

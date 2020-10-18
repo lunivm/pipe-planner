@@ -1,0 +1,18 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mm": "migrate-mongo",
+    "up": "migrate-mongo up",
+    "status": "migrate-mongo status",
+    "build": "npm run up"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "migrate-mongo": "^8.1.2",
+    "nconf": "^0.10.0"
+  }
+}
