@@ -30,7 +30,7 @@ function Dashboard(props) {
               {
                 label: '65',
                 id: '65',
-                tooltip: 'Total',
+                tooltip: 'Not Started',
                 style: FilterItemStyles.secondary
               },
               {
@@ -59,9 +59,10 @@ function Dashboard(props) {
               {
                 label: 'ASAP',
                 dataset: {
-                  labels: ['In Progress', 'Done', 'Hold'],
-                  data: [35, 25, 5],
+                  labels: ['Not Started', 'In Progress', 'Done', 'Hold'],
+                  data: [10, 35, 25, 5],
                   backgroundColor: [
+                    '#6c757d',
                     '#17a2b8',
                     '#28a745',
                     '#dc3545'
@@ -71,9 +72,10 @@ function Dashboard(props) {
               {
                 label: 'ASAP 222',
                 dataset: {
-                  labels: ['In Progress', 'Done', 'Hold'],
-                  data: [300, 50, 100],
+                  labels: ['Not Started', 'In Progress', 'Done', 'Hold'],
+                  data: [134, 300, 50, 100],
                   backgroundColor: [
+                    '#6c757d',
                     '#17a2b8',
                     '#28a745',
                     '#dc3545'

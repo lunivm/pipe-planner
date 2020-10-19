@@ -6,12 +6,14 @@
   "scripts": {
     "mm": "migrate-mongo",
     "up": "migrate-mongo up",
+    "down": "migrate-mongo down",
     "status": "migrate-mongo status",
     "build": "npm run up"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "faker": "^5.1.0",
     "migrate-mongo": "^8.1.2",
     "nconf": "^0.10.0"
   }
