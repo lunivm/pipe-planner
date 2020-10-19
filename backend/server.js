@@ -1,12 +1,9 @@
 import restify from 'restify';
-const morgan = require('morgan'); // workaround, not working otherwise
-import config from './config';
-import initRoutes from './routes';
-import logger from './core/logger';
-import connectMongoose from './core/db-connection';
 import corsMiddleware from 'restify-cors-middleware';
+import config from './config';
+import logger from './core/logger';
 
-connectMongoose();
+const morgan = require('morgan'); // workaround, not working otherwise
 
 const server = restify.createServer({
   name: config.name,
@@ -31,5 +28,4 @@ server.use(morgan('tiny', {
   }
 }));
 
-initRoutes(server);
-server.listen(config.port, config.host, () => logger.info(`${server.name} listening at ${server.url}`));
+export default server;

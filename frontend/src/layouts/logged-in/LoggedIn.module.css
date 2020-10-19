@@ -4,6 +4,7 @@
 }
 
 .rootHeader {
-  padding: 10px;
+  padding: 10px 1em;
   background-color: var(--main-bg-color);
+  border-bottom: 1px solid var(--main-border-color);
 }

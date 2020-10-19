@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm --watch ./ --inspect=127.0.0.1:9229 --delay 50ms server.js"
+    "start": "nodemon -r esm --watch ./ --inspect=127.0.0.1:9229 --delay 50ms index.js"
   },
   "author": "",
   "license": "ISC",

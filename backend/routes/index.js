@@ -4,7 +4,10 @@ export default function(server) {
     next();
   });
   server.get('/api/buckets', (req, res, next) => {
-    res.send({buckets: []});
+    res.send({
+      criteria: 'PRIORITY',
+      buckets: []
+    });
     next();
   });
 }

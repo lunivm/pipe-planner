@@ -1,0 +1,33 @@
+.Bucket {
+  text-align: center;
+  position: relative; 
+  width: 50%;
+  margin-bottom: 2em;
+}
+
+.Bucket:nth-child(odd) {
+  margin-top: -25%;
+}
+
+.Bucket:nth-child(even) {
+  margin-top: 0;
+}
+
+.Bucket:first-child {
+  margin-top: 0;
+}
+
+.Bucket:nth-child(2) {
+  margin-top: 25%;
+}
+
+.BucketsContainer {
+  padding: 10px;
+  flex-wrap: wrap;
+  align-content: baseline;
+  width: 100%;
+}
+
+.BucketLabel {
+  margin-top: 1em;
+}

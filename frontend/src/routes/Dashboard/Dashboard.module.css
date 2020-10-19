@@ -1,3 +1,14 @@
 .DashboardBucketsSection {
-  width: 340px;
+  width: 360px;
+  border-right: 1px solid var(--main-border-color);
+}
+
+.DashboardBucketsSectionToolPanel {
+  width: 2em;
+  border-right: 1px solid var(--main-border-color);
+}
+
+.DashboardBucketsOverallStatistics {
+  height: 70px;
+  border-bottom: 1px solid var(--main-border-color);
 }

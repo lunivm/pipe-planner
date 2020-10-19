@@ -22,7 +22,8 @@ body {
 }
 
 :root {
-  --main-bg-color: #dee2e6;
+  --main-bg-color: #f8f9fb;
+  --main-border-color: #b2b2b2;
 }
 
 .pp-flex {
@@ -35,4 +36,12 @@ body {
 
 .pp-flex-sized {
   flex: 1 1 auto;
+}
+
+.pp-flex-column {
+  flex-direction: column;
+}
+
+.pp-full-width {
+  width: 100%;
 }
