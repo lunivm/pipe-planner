@@ -8,13 +8,18 @@
     "up": "migrate-mongo up",
     "down": "migrate-mongo down",
     "status": "migrate-mongo status",
-    "build": "npm run up"
+    "build": "npm run up",
+    "recreate": "npx jake dropDb && npm run up && npx jake generate:db"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faker": "^5.1.0",
     "migrate-mongo": "^8.1.2",
+    "mongodb": "^3.6.2",
     "nconf": "^0.10.0"
+  },
+  "devDependencies": {
+    "faker": "^5.1.0",
+    "jake": "^10.8.2"
   }
 }

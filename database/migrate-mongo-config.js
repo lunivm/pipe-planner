@@ -1,20 +1,9 @@
-const nconf = require('nconf');
-
-nconf
-  .argv()
-  .env()
-  .file({file: '../backend/config/local.json'})
-  .file({file: '../backend/config/default.json'});
-
-const mongodbUri = nconf.get('MONGODB_URI');
-
-const uriParts = mongodbUri.split('/');
-const dbName = uriParts[uriParts.length - 1];
+const { mongodbUrl, dbName } = require('./config');
 
 // In this file you can configure migrate-mongo
 module.exports = {
   mongodb: {
-    url: mongodbUri,
+    url: mongodbUrl,
 
     databaseName: dbName,
 
