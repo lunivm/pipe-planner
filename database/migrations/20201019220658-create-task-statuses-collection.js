@@ -3,10 +3,10 @@ const collection = 'taskStatuses';
 module.exports = {
   async up(db, client) {
     await db.createCollection(collection).then(i => i.insertMany([
-      { name: 'Not Started' },
-      { name: 'In Progress' },
-      { name: 'Done' },
-      { name: 'Hold' }
+      { name: 'Not Started', sortValue: 0 },
+      { name: 'In Progress', sortValue: 1 },
+      { name: 'Done', sortValue: 2 },
+      { name: 'Hold', sortValue: 3 }
     ]));
   },
 

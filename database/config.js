@@ -3,8 +3,8 @@ const nconf = require('nconf');
 nconf
   .argv()
   .env()
-  .file({file: '../backend/config/local.json'})
-  .file({file: '../backend/config/default.json'});
+  .file({file: '../backend/src/config/local.json'})
+  .file({file: '../backend/src/config/default.json'});
 
 const mongodbUri = nconf.get('MONGODB_URI');
 

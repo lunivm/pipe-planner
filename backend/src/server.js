@@ -2,7 +2,6 @@ import restify from 'restify';
 import corsMiddleware from 'restify-cors-middleware';
 import config from './config';
 import logger from './core/logger';
-
 const morgan = require('morgan'); // workaround, not working otherwise
 
 const server = restify.createServer({
@@ -27,5 +26,7 @@ server.use(morgan('tiny', {
     write: msg => logger.info(msg)
   }
 }));
+
+server.use(restify.plugins.queryParser());
 
 export default server;

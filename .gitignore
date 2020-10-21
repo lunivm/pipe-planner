@@ -2,7 +2,7 @@
 
 # dependencies
 **/node_modules
-**/logs
+backend/src/logs
 
 **/.idea
 

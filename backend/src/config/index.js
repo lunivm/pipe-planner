@@ -7,8 +7,8 @@ import nconf from 'nconf';
 nconf
   .argv()
   .env()
-  .file({file: 'config/local.json'})
-  .file({file: 'config/default.json'});
+  .file({file: 'src/config/local.json'})
+  .file({file: 'src/config/default.json'});
 
 const config = Object.freeze({
   host: nconf.get('HOST'),

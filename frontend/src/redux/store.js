@@ -1,12 +1,9 @@
-import createRootReducer from './reducers';
-import { createBrowserHistory } from 'history';
+import rootReducer from './reducers';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
 
-export const history = createBrowserHistory();
-
 const store = createStore(
-  createRootReducer(history),
+  rootReducer,
   compose(
     applyMiddleware(thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

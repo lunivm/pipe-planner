@@ -1,14 +1,13 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoggedIn from '../layouts/logged-in';
 import Dashboard from './Dashboard';
 import NotFound from './NotFound';
 import Vehicles from './Vehicles';
-import { history } from '../redux/store';
 
 export default function Routes() {
   return (
-    <Router history={history}>
+    <Router>
       <LoggedIn>
         <Switch>
           <Route exact path="/dashboard">
