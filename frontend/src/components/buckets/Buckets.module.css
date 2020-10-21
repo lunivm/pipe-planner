@@ -22,10 +22,17 @@
 }
 
 .BucketsContainer {
-  padding: 10px;
+  padding: 1em 10px;
   flex-wrap: wrap;
   align-content: baseline;
   width: 100%;
+}
+
+.BucketTotal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 42%;
 }
 
 .BucketLabel {

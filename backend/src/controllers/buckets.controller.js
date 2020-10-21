@@ -9,8 +9,14 @@ const bucketsController = Object.freeze({
 
     res.send({
       criteria,
-      overallCounts: overallCounts.map(i => _.pick(i, ['total', 'status'])),
-      buckets: buckets.map(i => _.pick(i, ['total', 'items', 'label']))
+      overallCounts: overallCounts.map(i => _.pick(i, ['total', 'status', 'priority'])),
+      buckets: buckets
+        // root shape
+        .map(i => _.pick(i, ['total', 'groups', 'label']))
+        // groups array items shape
+        .map(i => Object.assign({}, i, {
+          groups: i.groups.map(({ label, total, priority }) => ({ label, total, priority }))
+        }))
     });
 
     next();

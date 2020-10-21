@@ -19,6 +19,8 @@ export default function Bucket(props) {
 
   return (
     <div className={styles.Bucket}>
+      <div className={styles.BucketTotal}>{props.total}</div>
+
       <Doughnut data={data}
         options={options}
         height={null}
@@ -31,6 +33,7 @@ export default function Bucket(props) {
 
 Bucket.propTypes = {
   label: PropTypes.string.isRequired,
+  total: PropTypes.number.isRequired,
   dataset: PropTypes.shape({
     labels: PropTypes.arrayOf(PropTypes.string).isRequired,
     data: PropTypes.arrayOf(PropTypes.number).isRequired,

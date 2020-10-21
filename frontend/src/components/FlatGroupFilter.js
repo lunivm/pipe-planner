@@ -19,10 +19,10 @@ export function FlatGroupFilter(props) {
     <div className="pp-flex pp-flex-sized">
       {(props.items || []).map(i =>
         <button type="button"
-          key={i.id}
+          key={i.id || [i.label, i.count].join('_')}
           style={{flexGrow: 1, flexShrink: 0, flexBasis: 0, whiteSpace: 'nowrap', padding: '0.1em', margin: '2px'}}
-          title={i.tooltip}
-          className={getClassNames(i)}>{i.label}<br/><span style={{fontSize: '0.85em'}}>{i.tooltip}</span></button>
+          title={i.label}
+          className={getClassNames(i)}>{i.count}<br/><span style={{fontSize: '0.85em'}}>{i.label}</span></button>
       )}
     </div>
   );
@@ -30,9 +30,9 @@ export function FlatGroupFilter(props) {
 
 FlatGroupFilter.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    tooltip: PropTypes.string,
+    label: PropTypes.string,
+    count: PropTypes.number.isRequired,
+    id: PropTypes.string,
     style: PropTypes.oneOf(Object.values(FilterItemStyles)).isRequired,
     active: PropTypes.bool
   })).isRequired

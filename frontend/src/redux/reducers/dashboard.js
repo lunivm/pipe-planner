@@ -1,13 +1,10 @@
 import actionTypes from '../constants/actionTypes';
 
-const initialState = {
-  bucketsCriteria: '',
-  buckets: []
-};
+const initialState = {};
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.dashboard.dashboardPageLoad:
+    case actionTypes.dashboard.pageLoad:
     default:
       return state;
   }

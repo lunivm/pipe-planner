@@ -12,6 +12,32 @@ const DashboardBucketsSectionToolPanel = ContainerClassWrapper(`${styles.Dashboa
 const DashboardBucketsSectionContent = ContainerClassWrapper(`pp-flex pp-flex-sized pp-flex-column`);
 const DashboardBucketItemsSection = ContainerClassWrapper('pp-flex pp-flex-sized');
 
+const getFlatGroupFilterStyle = statusPriority => {
+  switch (statusPriority) {
+    case 0:
+      return FilterItemStyles.secondary;
+    case 1:
+      return FilterItemStyles.primary;
+    case 2:
+      return FilterItemStyles.success;
+    case 3:
+      return FilterItemStyles.danger;
+    default:
+      return FilterItemStyles.dark;
+  }
+}
+
+const getBucketColor = priority => {
+  const colors = [
+    '#6c757d',
+    '#17a2b8',
+    '#28a745',
+    '#dc3545'
+  ];
+
+  return colors[priority];
+}
+
 function Dashboard(props) {
   const { getAllBucketsByCriteria } = props;
 
@@ -26,63 +52,11 @@ function Dashboard(props) {
 
         <DashboardBucketsSectionContent>
           <div className={`${styles.DashboardBucketsOverallStatistics} pp-flex pp-flex-fixed`}>
-            <FlatGroupFilter items={[
-              {
-                label: '65',
-                id: '65',
-                tooltip: 'Not Started',
-                style: FilterItemStyles.secondary
-              },
-              {
-                label: '35',
-                id: '35',
-                tooltip: 'In Progress',
-                style: FilterItemStyles.info
-              },
-              {
-                label: '25',
-                id: '25',
-                tooltip: 'Done',
-                style: FilterItemStyles.success
-              },
-              {
-                label: '5',
-                id: '5',
-                tooltip: 'Hold',
-                style: FilterItemStyles.danger
-              }
-            ]}/>
+            <FlatGroupFilter items={props.overallCounts}/>
           </div>
 
           <div className="pp-flex pp-flex-sized">
-            <BucketsContainer buckets={[
-              {
-                label: 'ASAP',
-                dataset: {
-                  labels: ['Not Started', 'In Progress', 'Done', 'Hold'],
-                  data: [10, 35, 25, 5],
-                  backgroundColor: [
-                    '#6c757d',
-                    '#17a2b8',
-                    '#28a745',
-                    '#dc3545'
-                  ]
-                }
-              },
-              {
-                label: 'ASAP 222',
-                dataset: {
-                  labels: ['Not Started', 'In Progress', 'Done', 'Hold'],
-                  data: [134, 300, 50, 100],
-                  backgroundColor: [
-                    '#6c757d',
-                    '#17a2b8',
-                    '#28a745',
-                    '#dc3545'
-                  ]
-                }
-              }
-            ]}/>
+            <BucketsContainer buckets={props.buckets}/>
           </div>
         </DashboardBucketsSectionContent>
       </DashboardBucketsSection>
@@ -92,8 +66,25 @@ function Dashboard(props) {
   );
 }
 
+const mapStateToProps = (state) => ({
+  overallCounts: state.buckets.overallCounts.map(({ total, status, priority }, index) => ({
+    count: total,
+    label: status,
+    style: getFlatGroupFilterStyle(priority)
+  })),
+  buckets: state.buckets.items.map(({ label, total, groups }) => ({
+    label,
+    total,
+    dataset: {
+      labels: groups.map(i => i.label),
+      data: groups.map(i => i.total),
+      backgroundColor: groups.map(i => getBucketColor(i.priority))
+    }
+  }))
+})
+
 const mapDispatchToProps = {
   getAllBucketsByCriteria
 };
 
-export default connect(null, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

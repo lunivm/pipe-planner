@@ -5,7 +5,8 @@ const actionTypes = Object.freeze({
   }),
   buckets: Object.freeze({
     setBuckets: 'BUCKETS.SET_BUCKETS',
-    setBucketsCriteria: 'BUCKETS.SET_BUCKETS_CRITERIA'
+    setBucketsCriteria: 'BUCKETS.SET_BUCKETS_CRITERIA',
+    setBucketsOverallCounts: 'BUCKETS.SET_BUCKETS_OVERALL_COUNTS'
   })
 });
 
