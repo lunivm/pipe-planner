@@ -42,7 +42,7 @@ namespace('generate', () => {
     await vehiclesCollection.insertMany(vehicles);
   });
 
-  task('tasks', async () => {
+  task('currentTasks', async () => {
     const db = await getDb();
 
     const priorities = await db.collection('taskPriorities').find({}).toArray();
@@ -66,11 +66,11 @@ namespace('generate', () => {
       });
     });
 
-    const tasksCollection = await db.collection('tasks');
+    const tasksCollection = await db.collection('currentTasks');
     await tasksCollection.insertMany(tasks);
   });
 
-  task('db', ['generate:vehicleManufacturers', 'generate:vehicles', 'generate:tasks'], async () => client.close());
+  task('db', ['generate:vehicleManufacturers', 'generate:vehicles', 'generate:currentTasks'], async () => client.close());
 });
 
 task('dropDb', async () => {

@@ -7,6 +7,6 @@ const schema = new mongoose.Schema({
   }
 });
 
-const VehicleSection = mongoose.model('VehicleSection', schema, 'vehicleSections');
+const VehicleSectionModel = mongoose.model('VehicleSectionModel', schema, 'vehicleSections');
 
-export default VehicleSection;
+export default VehicleSectionModel;

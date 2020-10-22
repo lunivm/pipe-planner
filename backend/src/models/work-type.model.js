@@ -7,6 +7,6 @@ const schema = new mongoose.Schema({
   }
 });
 
-const WorkType = mongoose.model('WorkType', schema, 'workTypes');
+const WorkTypeModel = mongoose.model('WorkTypeModel', schema, 'workTypes');
 
-export default WorkType;
+export default WorkTypeModel;

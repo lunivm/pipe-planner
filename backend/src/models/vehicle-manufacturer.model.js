@@ -7,6 +7,6 @@ const schema = new mongoose.Schema({
   }
 });
 
-const VehicleManufacturer = mongoose.model('VehicleManufacturer', schema, 'vehicleManufacturers');
+const VehicleManufacturerModel = mongoose.model('VehicleManufacturerModel', schema, 'vehicleManufacturers');
 
-export default VehicleManufacturer;
+export default VehicleManufacturerModel;

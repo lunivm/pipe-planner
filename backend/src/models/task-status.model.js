@@ -11,6 +11,6 @@ const schema = new mongoose.Schema({
   }
 });
 
-const TaskStatus = mongoose.model('TaskStatus', schema, 'taskStatuses');
+const TaskStatusModel = mongoose.model('TaskStatusModel', schema, 'taskStatuses');
 
-export default TaskStatus;
+export default TaskStatusModel;

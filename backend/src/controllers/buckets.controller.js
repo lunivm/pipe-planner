@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import bucketService from '../services/bucket/bucket.service';
+import bucketService from '../services/bucket';
 
 const bucketsController = Object.freeze({
   async getBuckets(req, res, next) {

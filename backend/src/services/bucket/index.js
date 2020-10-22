@@ -1,14 +1,14 @@
-import Task from '../../models/task.model';
+import CurrentTaskModel from '../../models/current-task.model';
 import getBucketsByPriorityAggregation from './bucketsByPriority.aggregation';
 import getOverallCountsAggregation from './overallCounts.aggregation';
 
 const bucketService = Object.freeze({
   async getOverallCounts() {
-    return Task.aggregate(getOverallCountsAggregation());
+    return CurrentTaskModel.aggregate(getOverallCountsAggregation());
   },
 
   async getBucketsByCriteria(criteria) {
-    return Task.aggregate(getBucketsByPriorityAggregation());
+    return CurrentTaskModel.aggregate(getBucketsByPriorityAggregation());
   }
 });
 

@@ -1,4 +1,5 @@
 import buckets from './buckets';
+import tasks from './tasks';
 
 export default function(server) {
   server.get('/', (req, res, next) => {
@@ -7,4 +8,5 @@ export default function(server) {
   });
 
   buckets(server);
+  tasks(server);
 }

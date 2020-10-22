@@ -33,6 +33,6 @@ const schema = new mongoose.Schema({
   }]
 });
 
-const Task = mongoose.model('Task', schema, 'tasks');
+const CurrentTaskModel = mongoose.model('CurrentTaskModel', schema, 'currentTasks');
 
-export default Task;
+export default CurrentTaskModel;

@@ -11,6 +11,6 @@ const schema = new mongoose.Schema({
   }
 });
 
-const TaskPriority = mongoose.model('TaskPriority', schema, 'taskPriorities');
+const TaskPriorityModel = mongoose.model('TaskPriorityModel', schema, 'taskPriorities');
 
-export default TaskPriority;
+export default TaskPriorityModel;
